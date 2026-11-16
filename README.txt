@@ -26,3 +26,5 @@ How to use:
 The resulting file will be created in the same directory.
 
 ("trialpic.jpg" was only used for testing; you can remove it)
+
+![Examples of possible transformations](./examples.jpg)
