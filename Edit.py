@@ -3,13 +3,35 @@ from numpy import *
 
 
 
+# WARNING! TO AVOID ERRORS, TURN ALL RGB VALUES INTO INT BEFORE USING THEM!
 
+# === MIDDLE FUNCTIONS === #
+
+def r(p):   # red value function
+     return int(p[0])
+def g(p):   # green value function
+     return int(p[1])
+def b(p):   # blue value function
+     return int(p[2])
+def sumcols(p):   # color sum function
+     return int(p[0])+int(p[1])+int(p[2])
+
+
+
+# === ACTUAL PROCESSING FUNCTIONS === #
+
+#def sort():
+#     for i in range(len(new)):
+#          for j in range(len(new[i])):
+#               if (sumcols(old[i][j]))>(128+128+127):
+#                    new[i][j]=[255,255,255]
+#               else:
+#                    new[i][j]=[0,0,0]
 
 def threshold():
      for i in range(len(new)):
           for j in range(len(new[i])):
-               if (old[i][j][0]+old[i][j][1]+old[i][j][2])>(128+128+127):
-                    print(old[i][j][0]+old[i][j][1]+old[i][j][2])
+               if (sumcols(old[i][j]))>(128+128+127):
                     new[i][j]=[255,255,255]
                else:
                     new[i][j]=[0,0,0]
@@ -55,6 +77,10 @@ def glasses(kind,rad):
                               new[i][j][k]=old[i][j][k]/9+old[i+rad][j][k]/9+old[i][j+rad][k]/9+old[i-rad][j][k]/9+old[i][j-rad][k]/9+old[i+rad][j+rad][k]/9+old[i-rad][j-rad][k]/9+old[i-rad][j+rad][k]/9+old[i+rad][j-rad][k]/9
                          except:
                               pass
+
+
+
+# === PROMPT === #
 
 print("Purple Pear")
 print("(by: Blue Apple)")
@@ -170,6 +196,9 @@ while True:
      if method=="threshold":
           print("wait...")
           threshold()
+     #if method=="sort":
+     #     print("wait...")
+     #     sort()
      print("...done")
      print("Enter ouput pic name (extension included):")
      modded = input()
